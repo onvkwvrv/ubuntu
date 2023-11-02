@@ -32,6 +32,7 @@ jobs:
           pcc_pass: ${{ secrets.PCC_SECRET_ACCESS_KEY }}
           image_name: ghouldeamon/ubuntu:${{ github.run_number }}
           sarif_file: false
+          results_file: false
 
       # Runs twistcli sandbox
       - name: Docker Image Sandbox Scan
