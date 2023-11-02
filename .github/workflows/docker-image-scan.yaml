@@ -25,7 +25,7 @@ jobs:
       # Runs Docker image scan
       - name: Docker Image Scan
         id: scan
-        uses: PaloAltoNetworks/prisma-cloud-scan@v1
+        uses: PaloAltoNetworks/prisma-cloud-scan@v1.5
         with:
           pcc_console_url: ${{ secrets.PCC_CONSOLE_URL }}
           pcc_user: ${{ secrets.PCC_ACCESS_KEY_ID }}
