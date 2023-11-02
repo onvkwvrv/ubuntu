@@ -1,8 +1,6 @@
 name: Prisma Cloud Docker Image Scan
 on:
-  pull_request:
-    branches:
-      - 'main'
+  workflow_dispatch:
 
 jobs:
   Docker-Image-Scan:
