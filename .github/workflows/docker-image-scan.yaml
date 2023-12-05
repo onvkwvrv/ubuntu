@@ -30,7 +30,7 @@ jobs:
           PRISMA_API_URL: https://api.prismacloud.io
         with:
           api-key: ${{ secrets.BC_API_KEY }}
-          file: Dockerfile
+          directory: ubuntu/
           output_format: cli
           output_file_path: console
           use_enforcement_rules: true
