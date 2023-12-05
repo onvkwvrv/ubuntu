@@ -33,7 +33,7 @@ jobs:
           file: Dockerfile
           output_format: cli
           output_file_path: console
-          use_enforcement_rules: false
+          use_enforcement_rules: true
 
       # Runs Docker image scan
       - name: Twistlock Image Scan
