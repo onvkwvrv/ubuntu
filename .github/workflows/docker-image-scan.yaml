@@ -23,7 +23,7 @@ jobs:
           tags: ghouldaemon/ubuntu:${{ github.run_number }}
 
       # Runs Docker image scan
-      - name: Docker Image Scan
+      - name: Twistlock Image Scan
         id: scan
         uses: PaloAltoNetworks/prisma-cloud-scan@v1.5
         with:
@@ -33,20 +33,20 @@ jobs:
           image_name: ghouldaemon/ubuntu:${{ github.run_number }}
 
       # Runs checkov scan
-      - name: Run Prisma Cloud 
+      - name: Code Application Security Scan 
         id: prisma-cloud
         uses: bridgecrewio/checkov-action@master
         env:
           PRISMA_API_URL: https://api.prismacloud.io
         with:
           api-key: ${{ secrets.BC_API_KEY }}
-          directory: ubuntu/
+          directory: .
           output_format: cli
           output_file_path: console
-          use_enforcement_rules: true
+          use_enforcement_rules: false
 
       # Runs twistcli sandbox
-      - name: Docker Image Sandbox Scan
+      - name: Twistlock Image Sandbox Scan
         run: |
           curl -s https://utd-packages.s3.amazonaws.com/twistcli --output twistcli
           chmod +x twistcli
