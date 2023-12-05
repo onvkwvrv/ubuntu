@@ -34,8 +34,6 @@ jobs:
           output_format: cli
           output_file_path: console
           use_enforcement_rules: true
-
-      - uses: actions/checkout@v3
       
       # Runs Docker image scan
       - name: Twistlock Image Scan
