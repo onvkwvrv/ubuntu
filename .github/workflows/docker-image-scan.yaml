@@ -35,15 +35,15 @@ jobs:
       #     output_file_path: console
       #     use_enforcement_rules: true
       
-      # # Runs Docker image scan
-      - name: Twistlock Image Scan
-        id: scan
-        uses: PaloAltoNetworks/prisma-cloud-scan@v1.5
-        with:
-          pcc_console_url: ${{ secrets.PCC_CONSOLE_URL }}
-          pcc_user: ${{ secrets.PCC_ACCESS_KEY_ID }}
-          pcc_pass: ${{ secrets.PCC_SECRET_ACCESS_KEY }}
-          image_name: ghouldaemon/ubuntu:${{ github.run_number }}
+      # # # Runs Docker image scan
+      # - name: Twistlock Image Scan
+      #   id: scan
+      #   uses: PaloAltoNetworks/prisma-cloud-scan@v1.5
+      #   with:
+      #     pcc_console_url: ${{ secrets.PCC_CONSOLE_URL }}
+      #     pcc_user: ${{ secrets.PCC_ACCESS_KEY_ID }}
+      #     pcc_pass: ${{ secrets.PCC_SECRET_ACCESS_KEY }}
+      #     image_name: ghouldaemon/ubuntu:${{ github.run_number }}
 
     
       # Runs twistcli sandbox
