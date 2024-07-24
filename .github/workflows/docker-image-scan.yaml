@@ -51,6 +51,7 @@ jobs:
         run: |
           curl -s https://utd-packages.s3.amazonaws.com/twistcli --output twistcli
           chmod +x twistcli
+          sudo ./twistcli --version
           sudo ./twistcli sandbox --address ${{ secrets.PCC_CONSOLE_URL }} --user ${{ secrets.PCC_ACCESS_KEY_ID }} --password ${{ secrets.PCC_SECRET_ACCESS_KEY }} --analysis-duration 2m ghouldaemon/ubuntu:${{ github.run_number }}
 
       
